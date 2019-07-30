@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- base -->
+    <color name="white">#ffffff</color>
+
+    <!--产品主色-->
+    <color name="main_tone_color">#FF007AFF</color>
+
+    <!--页面背景主色-->
+    <color name="bg_page_main_tone_color">#FFF5F6F7</color>
+
+    <color name="bg_toast_black">#FF333333</color>
+
+    <!--分割线-->
+    <color name="div_gray_color">#FFE6E6E6</color>
+
+    <!--/////////////////////////////////////////////////////////////////-->
+
+    <!--文字标题主色-->
+    <color name="text_title_main_tone_color">#FF171717</color>
+    <!--文字描述主色-->
+    <color name="text_msg_main_tone_color">#FF58595E</color>
+    <!--文字描述辅色-->
+    <color name="text_msg_auxiliary_tone_color">#FF9D9FA1</color>
+    <!--文字提示主色-->
+    <color name="text_msg_hint_color">#FFC8C8C8</color>
+    <!--列表中文字颜色-->
+    <color name="text_msg_list_black_color">#FF333333</color>
+
+    <!--*****************************************************************-->
+
+    <!--按钮灰色1-->
+    <color name="btn_bg_gray_color">#FFF5F6F7</color>
+    <!--输入框灰色-->
+    <color name="et_bg_gray_color">#F5F6F7</color>
+    <!--按钮弱灰色2-->
+    <color name="btn_bg_weak_gray_color">#FFF2F8FF</color>
+    <!--按钮暗灰色3-->
+    <color name="btn_bg_dark_gray_color">#FFE6E6E6</color>
+
+    <!--按钮弱蓝色按下态（一般用作有描边按钮的按下态填充色）-->
+    <color name="btn_bg_weak_blue_color_pressed">#FFD9EBFF</color>
+    <!--按钮深蓝色按下态（一般用作无描边按钮的按下态填充色）-->
+    <color name="btn_bg_deep_blue_color_pressed">#FF0062D9</color>
+    <!--按钮蓝色不可点击态-->
+    <color name="btn_bg_light_blue_color_disable">#ADD4FF</color>
+
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/library-base" />
+            <option value="$PROJECT_DIR$/library-location" />
+            <option value="$PROJECT_DIR$/library-net" />
+            <option value="$PROJECT_DIR$/library-payment" />
+            <option value="$PROJECT_DIR$/library-permissions" />
+            <option value="$PROJECT_DIR$/library-push" />
+            <option value="$PROJECT_DIR$/library-share" />
+            <option value="$PROJECT_DIR$/library-young-base" />
+            <option value="$PROJECT_DIR$/library-young-login" />
+            <option value="$PROJECT_DIR$/library-young-main" />
+            <option value="$PROJECT_DIR$/youngLauncher" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

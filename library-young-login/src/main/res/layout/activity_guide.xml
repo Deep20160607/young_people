@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/teacher_guide_image_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="133dp"
+        android:src="@mipmap/guide_logo"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/teacher_guide_image_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teacher_guide_image_head"
+        android:layout_centerHorizontal="true"
+        android:text="v1.0"
+        android:textSize="25dp"
+        android:textColor="#595757"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/teacher_guide_btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="49dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_circle_white_multi_selector"
+        android:text="新用户注册"
+        android:gravity="center"
+        android:textColor="#FF007AFF"
+        android:layout_marginLeft="47.5dp"
+        android:layout_marginRight="47.5dp"
+        android:textSize="16dp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/teacher_guide_btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:layout_above="@+id/teacher_guide_btn_register"
+        android:background="@drawable/btn_circle_blue_multi_selector"
+        android:text="登录"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:layout_marginLeft="47.5dp"
+        android:layout_marginRight="47.5dp"
+        android:textSize="16dp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/teacher_server_set"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:drawableRight="@mipmap/teacher_arrow_right"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#15A6EE"
+        android:textSize="14dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

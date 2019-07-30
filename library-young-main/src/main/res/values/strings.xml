@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">library-young-main</string>
+
+    <string name="index_bottom_bar_home">首页</string>
+    <string name="index_bottom_bar_follow">关注</string>
+    <string name="index_bottom_bar_news">消息</string>
+    <string name="index_bottom_bar_personal">我的</string>
+</resources>

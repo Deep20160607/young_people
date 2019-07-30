@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 自定义控件的名称 -->
+    <declare-styleable name="ClearEditText">
+        <!-- 自定义的属性名称 和对应的单位 -->
+        <attr name="deleIcon" format="reference" />
+    </declare-styleable>
+
+</resources>
