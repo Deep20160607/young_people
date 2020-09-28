@@ -7,10 +7,15 @@ buildscript {
         google()
         mavenCentral()
         jcenter()
+        maven {
+            url uri(rootDir.toURI().toString() + '/localMaven/plugin')
+        }
+        mavenLocal()
 //        maven { url 'https://dl.bintray.com/umsdk/release' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.dupeng:firstplugin:1.0'
         classpath "com.alibaba:arouter-register:1.0.2"
         classpath 'com.qihoo360.argusapm:argus-apm-gradle-asm:3.0.1.1001'
         //replugin添加 1
