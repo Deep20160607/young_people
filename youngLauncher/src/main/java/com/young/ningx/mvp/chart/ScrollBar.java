@@ -9,9 +9,6 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Region;
 import android.os.Build;
-import android.support.v4.view.GestureDetectorCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.animation.FastOutLinearInInterpolator;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
@@ -19,6 +16,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.OverScroller;
+
+import androidx.core.view.GestureDetectorCompat;
+import androidx.core.view.ViewCompat;
+import androidx.interpolator.view.animation.FastOutLinearInInterpolator;
 
 import java.util.ArrayList;
 import java.util.Collections;

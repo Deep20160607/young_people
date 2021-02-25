@@ -1,7 +1,8 @@
 package com.young.library.base.mvp.ui.activity;
 
-import android.support.annotation.NonNull;
 import android.view.View;
+
+import androidx.annotation.NonNull;
 
 import com.young.library.base.mvp.presenter.BasePresenter;
 import com.young.library.base.mvp.view.IView;

@@ -1,7 +1,8 @@
 package com.young.ningx;
 
 import android.content.Context;
-import android.support.multidex.MultiDex;
+
+import androidx.multidex.MultiDex;
 
 import com.umeng.commonsdk.UMConfigure;
 import com.young.library.base.BaseApplication;

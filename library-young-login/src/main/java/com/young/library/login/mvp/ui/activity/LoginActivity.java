@@ -3,7 +3,6 @@ package com.young.library.login.mvp.ui.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -12,6 +11,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.young.library.base.manager.RouteManager;

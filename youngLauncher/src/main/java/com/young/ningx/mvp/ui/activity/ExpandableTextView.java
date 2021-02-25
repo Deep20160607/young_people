@@ -13,6 +13,7 @@ package com.young.ningx.mvp.ui.activity;
  *  3.FlatUI
  *      http://www.bootcss.com/p/flat-ui/
  */
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
@@ -36,6 +37,7 @@ import com.young.ningx.R;
 
 import java.lang.reflect.Field;
 
+@SuppressLint("AppCompatCustomView")
 public class ExpandableTextView extends TextView{
 
     public static final int STATE_SHRINK = 0;

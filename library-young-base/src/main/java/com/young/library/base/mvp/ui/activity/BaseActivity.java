@@ -4,10 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.os.Build;
-import android.support.annotation.IdRes;
-import android.support.annotation.LayoutRes;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +13,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.annotation.IdRes;
+import androidx.fragment.app.FragmentActivity;
 
 import com.gyf.immersionbar.ImmersionBar;
 import com.umeng.analytics.MobclickAgent;

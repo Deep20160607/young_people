@@ -1,5 +1,6 @@
 package com.young.library.base.utils;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
@@ -8,11 +9,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Build.VERSION;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -109,6 +112,7 @@ public class PermissionUtils {
 
     }
 
+    @SuppressLint("WrongConstant")
     private static void showPermissionToast(Activity activity, String permission) {
         String info = "";
         if (!ActivityCompat.shouldShowRequestPermissionRationale(activity, permission)) {
@@ -149,6 +153,7 @@ public class PermissionUtils {
 
     }
 
+    @SuppressLint("WrongConstant")
     public static void gotoPermissionManager(Context context) {
         try {
             String var3 = Build.MANUFACTURER;

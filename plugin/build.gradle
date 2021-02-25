@@ -4,6 +4,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation gradleApi()
+
+    implementation 'com.android.tools.build:gradle:3.5.3'
 }
 
 sourceCompatibility = "1.7"
