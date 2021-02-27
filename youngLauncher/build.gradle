@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 apply plugin: 'argusapm'
 
-apply plugin: 'com.dupeng.plugin'
-userBean {
-    name 'dupeng'
-}
+//apply plugin: 'com.dupeng.plugin'
+//userBean {
+//    name 'dupeng'
+//}
 //生成打包时间
 def releaseTime() {
     return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
