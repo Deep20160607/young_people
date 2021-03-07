@@ -97,8 +97,8 @@ android {
             shrinkResources false                             //移除无用的resource文件，此项只有在开启混淆时才生效
             signingConfig signingConfigs.release             //使用release证书签名
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            aaptOptions.cruncherEnabled = false
-            aaptOptions.useNewCruncher = false
+//            aaptOptions.cruncherEnabled = false
+//            aaptOptions.useNewCruncher = false
             //多渠道打包配置
 //            applicationVariants.all { variant ->
 //                variant.outputs.each { output ->
