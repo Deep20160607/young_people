@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/teacher_login_guide"
+        layout="@layout/layout_common_header" />
+
+    <!--可收起-->
+    <ScrollView
+        android:id="@+id/teacher_login_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <com.young.library.base.view.SoftKeyBoardSatusView
+            android:id="@+id/teacher_login_listen_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/teacher_login_image_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="8dp"
+                android:text="密码登录"
+                android:textColor="@color/text_title_main_tone_color"
+                android:textSize="28dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_teacher_login_psd_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/teacher_login_image_head">
+
+                <!--密码登陆-phone-->
+                <com.young.library.base.view.ClearEditText
+                    android:id="@+id/edt_teacher_login_psd_type_phone"
+                    style="@style/clear_edit_text"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="24dp" />
+
+                <!--密码登陆-psd-->
+                <RelativeLayout
+                    android:id="@+id/rl_teacher_login_psd_type_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/edt_teacher_login_psd_type_phone">
+
+                    <com.young.library.base.view.ClearEditText
+                        android:id="@+id/edt_teacher_login_psd_type_password"
+                        style="@style/clear_edit_text"
+                        android:paddingRight="60dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_teacher_login_psd_type_forget"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:textSize="14dp"
+                        android:textColor="@color/text_msg_auxiliary_tone_color"
+                        android:paddingBottom="8dp"
+                        android:text="忘记密码"/>
+
+                </RelativeLayout>
+
+                <!--验证码登陆-phone-->
+                <RelativeLayout
+                    android:id="@+id/rl_teacher_login_verification_code_type_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone">
+
+                    <!--输入手机号-->
+                    <com.young.library.base.view.ClearEditText
+                        android:id="@+id/edt_teacher_login_verification_code_type_phone"
+                        style="@style/clear_edit_text"
+                        android:paddingLeft="53.5dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_register_head_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:text="+86"/>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="16dp"
+                        android:layout_toRightOf="@+id/tv_register_head_phone"
+                        android:background="@color/div_gray_color"
+                        android:layout_marginLeft="12dp"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!--btn-->
+            <TextView
+                android:id="@+id/teacher_login_btn_login"
+                style="@style/button_style_one"
+                android:layout_below="@id/rl_teacher_login_psd_type"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="40dp"
+                android:enabled="false"
+                android:text="登录" />
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:gravity="center"
+                android:layout_below="@id/teacher_login_btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--手机验证码登录-->
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/teacher_vertify_code_login_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="用验证码登录"
+                    android:textColor="@color/main_tone_color"
+                    android:textSize="14dp" />
+
+                <!--注册-->
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/teacher_login_btn_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="注册"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/main_tone_color"
+                    android:textSize="14dp" />
+
+            </RelativeLayout>
+
+        </com.young.library.base.view.SoftKeyBoardSatusView>>
+
+    </ScrollView>
+
+</LinearLayout>

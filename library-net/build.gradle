@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion project.properties.'compileSdkVersion'.toString().toInteger()
+    buildToolsVersion project.properties.'buildToolsVersion'
+
+    defaultConfig {
+        minSdkVersion project.properties.'minSdkVersion'.toString().toInteger()
+        targetSdkVersion project.properties.'targetSdkVersion'.toString().toInteger()
+        versionCode project.properties.'versionCode'.toString().toInteger()
+        versionName project.properties.'versionName'
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation rootProject.ext.unitTestLibrary["junit"]
+    androidTestImplementation rootProject.ext.unitTestLibrary["runner"]
+    androidTestImplementation rootProject.ext.unitTestLibrary["espresso-core"]
+
+    api rootProject.ext.dependencies["pickerView"]
+    api rootProject.ext.dependencies["appcompat-v7"]
+
+    //网络请求依赖
+    api rootProject.ext.dependencies["okio"]
+    api rootProject.ext.dependencies["okhttp"]
+    api rootProject.ext.dependencies["retrofit"]
+    api rootProject.ext.dependencies["converter-scalars"]
+
+    //RxJava
+    api rootProject.ext.dependencies["rxjava"]
+    api rootProject.ext.dependencies["rxandroid"]
+    api rootProject.ext.dependencies["adapter-rxjava2"]
+    api rootProject.ext.dependencies["gson"]
+
+    api rootProject.ext.dependencies["fastjson"]
+    api rootProject.ext.dependencies["fastjson_android"]
+
+    api rootProject.ext.dependencies["retrofit-converter-gson"]
+    api rootProject.ext.dependencies["okhttp3-logging-interceptor"]
+
+}

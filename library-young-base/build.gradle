@@ -1,0 +1,69 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion project.properties.'compileSdkVersion'.toString().toInteger()
+    buildToolsVersion project.properties.'buildToolsVersion'
+
+    defaultConfig {
+        minSdkVersion project.properties.'minSdkVersion'.toString().toInteger()
+        targetSdkVersion project.properties.'targetSdkVersion'.toString().toInteger()
+        versionCode project.properties.'versionCode'.toString().toInteger()
+        versionName project.properties.'versionName'
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation rootProject.ext.unitTestLibrary["junit"]
+    androidTestImplementation rootProject.ext.unitTestLibrary["runner"]
+    androidTestImplementation rootProject.ext.unitTestLibrary["espresso-core"]
+
+    //multiDex
+    api rootProject.ext.multiDexLibraryLibs
+
+    api rootProject.ext.dependencies["eventbus"]
+
+    api rootProject.ext.dependencies["logger"]
+
+    debugApi rootProject.ext.dependencies["leakcanary-android"]
+    releaseApi rootProject.ext.dependencies["leakcanary-android-no-op"]
+
+    api rootProject.ext.arouter["arouter-api"]
+    annotationProcessor rootProject.ext.arouter["arouter-compiler"]
+
+    /*Glide */
+    api rootProject.ext.dependencies["glide"]
+    annotationProcessor rootProject.ext.dependencies["glide-compile"]
+    annotationProcessor rootProject.ext.dependencies["glide-okhttp3-integration"]
+
+    api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+
+    implementation project(':library-net')
+
+    api rootProject.ext.thirdLibrary["umeng_analytics"]
+    api rootProject.ext.thirdLibrary["umeng_common"]
+    api rootProject.ext.jpushJGLibs
+    api rootProject.ext.immersionbars
+ }

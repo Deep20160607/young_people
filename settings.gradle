@@ -1,0 +1,2 @@
+//include ':plugin'
+include ':youngLauncher', ':library-young-base', ':library-net', ':library-young-login', ':library-young-main', ':library-push', ':library-location', ':library-share', ':library-permissions', ':library-payment', ':library-base'

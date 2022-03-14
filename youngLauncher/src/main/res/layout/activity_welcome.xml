@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".mvp.ui.activity.WelcomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/teacher_guide_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20.0dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/teacher_guid_login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47.5dp"
+                android:layout_marginRight="47.5dp"
+                android:layout_weight="1"
+                android:paddingBottom="12dp"
+                android:text="立即体验"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/teacher_dot_group"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="45.0dp"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+        <Button
+            android:id="@+id/teacher_guide_next_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="45.0dp"
+            android:layout_marginRight="5dip"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="跳过"
+            android:textColor="#979797" />
+
+    </RelativeLayout>
+
+    <!--<com.shensz.parents.mvp.ui.view.GifAnimationView-->
+        <!--android:id="@+id/teacher_welcome_gif"-->
+        <!--android:layout_width="137dp"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:paddingBottom="20dp" />-->
+
+    <RelativeLayout
+        android:id="@+id/teacher_welcome_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/teacher_welcome_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"/>
+
+        <RelativeLayout
+            android:id="@+id/teacher_main_flash_bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white">
+
+            <ImageView
+                android:id="@+id/teacher_main_app_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/flash_screen_logo"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/teacher_main_next_btn"
+                android:layout_width="56dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:text="跳过"
+                android:visibility="gone"
+                android:background="@drawable/young_wel_next_btn"
+                android:textColor="@color/text_msg_main_tone_color"
+                 />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/start_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/start_skip_count_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="跳过"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_start_page_circle"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            />
+    </FrameLayout>
+
+</RelativeLayout>

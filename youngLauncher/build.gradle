@@ -1,0 +1,223 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'argusapm'
+
+//apply plugin: 'com.dupeng.plugin'
+//userBean {
+//    name 'dupeng'
+//}
+//生成打包时间
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+android {
+    compileSdkVersion project.properties.'compileSdkVersion'.toString().toInteger()
+    buildToolsVersion project.properties.'buildToolsVersion'
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        applicationId "com.young.ningx"
+        minSdkVersion project.properties.'minSdkVersion'.toString().toInteger()
+        targetSdkVersion project.properties.'targetSdkVersion'.toString().toInteger()
+        versionCode project.properties.'versionCode'.toString().toInteger()
+        versionName project.properties.'versionName'
+        flavorDimensions "versionCode"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        //只保留指定和默认的资源
+        resConfigs('zh-rCN', 'en')
+        ndk {
+            // 设置支持的 SO 库构架 真机，模拟器
+            abiFilters ('armeabi','armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64')
+        }
+        sourceSets { //设置.so文件路径
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+            }
+        }
+
+
+        manifestPlaceholders = [
+                UMENG_CHANNEL_VALUE: "Test",
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "c7d3be9e778ef41154e8b91e", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "Alpha", //暂时填写默认值即可.
+        ]
+         //replugin添加 2
+        applicationId "com.qihoo360.replugin.sample.host"
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    //配置编译的jdk版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file(rootDir.path + project.project."signing_store_file".toString())
+            storePassword project.project."signing_store_password".toString()
+            keyAlias project.project."signing_key_alias".toString()
+            keyPassword project.project."signing_key_password".toString()
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        release {
+            storeFile file(rootDir.path + project.project."signing_store_file".toString())
+            storePassword project.project."signing_store_password".toString()
+            keyAlias project.project."signing_key_alias".toString()
+            keyPassword project.project."signing_key_password".toString()
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false                               //是否混淆
+            zipAlignEnabled false                            //Zipalign优化
+            shrinkResources false                            // 移除无用的resource文件
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+//            buildConfigField "boolean", "LOG_ON", "false" //不显示Log
+            minifyEnabled false
+            zipAlignEnabled false                             //开启Zipalign优化
+            shrinkResources false                             //移除无用的resource文件，此项只有在开启混淆时才生效
+            signingConfig signingConfigs.release             //使用release证书签名
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            aaptOptions.cruncherEnabled = false
+//            aaptOptions.useNewCruncher = false
+            //多渠道打包配置
+//            applicationVariants.all { variant ->
+//                variant.outputs.each { output ->
+//                    def outputFile = output.outputFile
+//                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+//                        // 输出apk名称为test_v1.0_2016-08-15_wandoujia.apk
+//                        def fileName = "test_v${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+//                        output.outputFile = new File(outputFile.parent, fileName)
+//                    }
+//                }
+//            }
+//            android.applicationVariants.all { variant ->
+//                variant.outputs.all {
+//                    outputFileName = "youngPeople_v${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+//                }
+//            }
+        }
+    }
+
+   // 渠道配置
+//    productFlavors {
+//        Alpha {//自己打包测试使用
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: Test]
+//        }
+//        Tencent {//投放应用宝市场
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: Tencent]
+//        }
+//        Baidu {//投放百度市场
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: Baidu]
+//        }
+//        Wandoujia {//投放豌豆荚市场
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: Wandoujia]
+//        }
+//        PP {//投放PP助手市场
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: PP]
+//        }
+//        Qihoo {//投放PP助手市场
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: Qihoo]
+//        }
+//        Vivo {//投放vivo市场
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: Vivo]
+//        }
+//        Oppo {//投放oppo市场
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: Oppo]
+//        }
+//        Xiaomi {//投放小米市场
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: Xiaomi]
+//        }
+//        Meizu {//投放魅族市场
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: Meizu]
+//        }
+//        Huawei {//投放华为应用市场
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: Huawei]
+//        }
+//        Lenovo {//投放联想市场
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: Lenovo]
+//        }
+//        Letv {//投放乐视市场
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: Letv]
+//        }
+//        Gionee {//投放金立市场
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: Gionee]
+//        }
+//        HiMarket {//投放安卓市场
+//                 manifestPlaceholders = [UMENG_CHANNEL_VALUE: HiMarket]
+//        }
+//    }
+
+//    productFlavors.all { flavor ->
+//        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name] //动态地修改AndroidManifest中的渠道名
+//    }
+
+}
+
+ext {
+    pluginDir = join_separator(file('settings.gradle').parent, "src", "main", "assets", "plugins")
+}
+//replugin添加 3
+if (project.properties.'is_replugin' == 'true') {
+    println '>>>>  replugin >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+    apply plugin: 'replugin-host-gradle'
+    repluginHostConfig {
+        // 设置为“不需要常驻进程”
+        persistentEnable = false
+        countNotTranslucentStandard = 7
+        countNotTranslucentSingleTop = 7
+        countNotTranslucentSingleTask = 5
+        countNotTranslucentSingleInstance = 3
+    }
+    dependencies {
+        api 'com.qihoo360.replugin:replugin-host-lib:2.2.4'
+    }
+
+} else {
+    println '>>>> no replugin >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+//    dependencies {
+//        api "com.17zuoye.spider:ext-no-plugin:1.0.2@aar"
+//        api rootProject.ext.aiLessonLibs
+//    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation rootProject.ext.unitTestLibrary["junit"]
+    androidTestImplementation rootProject.ext.unitTestLibrary["runner"]
+    androidTestImplementation rootProject.ext.unitTestLibrary["espresso-core"]
+
+    api rootProject.ext.arouter["arouter-api"]
+    annotationProcessor rootProject.ext.arouter["arouter-compiler"]
+
+//    compile rootProject.ext.replugin["replugin"]
+
+    implementation project(':library-base')
+    implementation project(':library-young-base')
+    implementation project(':library-net')
+    implementation project(':library-young-login')
+    implementation project(':library-young-main')
+}
+
+def join_separator(String... paths) {
+    return paths.join(File.separator)
+}
